@@ -32,8 +32,8 @@
 **本包克隆到任意机器、任意目录后可直接运行，不需要修改任何脚本中的路径。** 所有脚本通过 `code/_paths.py` 取路径，该模块以**自身文件位置**推断仓库根目录。
 
 ```bash
-git clone https://github.com/<account>/igan-gdiga1-axis-pipeline.git
-cd igan-gdiga1-axis-pipeline
+git clone https://github.com/kongtonglangke/-igan-gdiga1-axis-pipeline-.git
+cd -igan-gdiga1-axis-pipeline-
 python code/_paths.py      # 自检：打印各根目录及存在性；退出码 = 问题数（正常为 0）
 ```
 
@@ -50,7 +50,7 @@ python code/_paths.py      # 自检：打印各根目录及存在性；退出码
 三个环境变量可覆盖上述推断（优先级最高；不设即自动推断）：
 
 ```bash
-export IGAN_REPRO_ROOT=/path/to/igan-gdiga1-axis-pipeline    # 仓库根
+export IGAN_REPRO_ROOT=/path/to/-igan-gdiga1-axis-pipeline-    # 仓库根
 export IGAN_RAWDATA_ROOT=/path/to/00_rawdata                # 外部原始数据根
 export IGAN_SUBMISSION_DIR=/path/to/submission              # 投稿材料目录（一般无需设置）
 ```
@@ -111,6 +111,8 @@ Third-party source data (GEO, eQTL Catalogue, GTEx, OneK1K, ImmuNexUT, GWAS summ
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff); the archived version DOI will be filled in there once the Zenodo record is published.
 
 ---
+*v2.16 · 2026-10-02 · 阶段4.5 复现包* — v2.15→v2.16：**仓库名写法更正（首尾各一个连字符）＋ clone 地址补全为真实账号**。仓库已建并公开，经 GitHub 页面核对，**实际仓库名为 `-igan-gdiga1-axis-pipeline-`（首尾各有一个连字符）**，属主 `kongtonglangke`。v2.13 ④ 及本文件此前各版所记的 `igan-gdiga1-axis-pipeline`（无连字符）**写法有误，以本条为准**（该错误曾导致本地 remote 指向不存在的仓库）。① **本文件**三处更正：`快速开始` 的 `git clone` 地址与 `cd` 目录名、环境变量示例中的 `IGAN_REPRO_ROOT`；并把 `<account>` 占位符替换为真实账号。② **`CITATION.cff`** 的 `repository-code` 由注释态**启用**并填真实地址（`https://github.com/kongtonglangke/-igan-gdiga1-axis-pipeline-`）；`doi` / `url` / 两个 `orcid` **仍留注释**，待 Zenodo 出 DOI 后回填。③ **同步范围**：`GitHub上传_20261001/` 中转站按新件重建（含 `00_上传文件清单`）、`_gitpush_work/` 本地待推仓库、`../投稿前硬关卡处理单_v1.0_20260927.md`、`GitHub上传_20261001/00_上传操作说明_必读.md` §7–§8。④ **未改**：`code/`、`data/`、`results/` 的任何内容与数值，以及历史留档（`06_投稿前待办_20260929/` 内副本、`_archive*` 记忆快照）——历史快照按惯例不回改，其旧写法只作留痕。
+
 *v2.15 · 2026-10-01 · 阶段4.5 复现包* — v2.14→v2.15：**「方案 B／采用完整 CollecTRI 网络」重跑落地 —— 上游调控层（L8）由阳性结论改判为阴性结论，全链条同步**。v2.14 已把"截断快照 vs 完整网络"的事实与影响面如实写明；作者据此就两项口径裁定：**① 零分布改用「按各调控子自身靶数匹配」**（不是全表统一的中位靶数随机基因集）；**② L8 保留该层但改为阴性结论**（不删层、不并入他层，JASPAR 序列层结果保留、回路降为 Discussion 假设）。本轮按此重跑 step0→step3 并同步全部落点；九层结构与其余内容不变。
 
 **① 网络与口径**：`data/sc_regulatory/CollecTRI_omnipath.tsv` 由**一次中断下载所得的截断快照**（16,236 条 / 317 regulon）换为**完整 CollecTRI 网络** —— **64,516** 条记录、**1,201** 个 TF、**6,628** 个不同靶基因；规范化 md5 `9296d2eb6f687dafe4067c233d5330d4`。表达面板由 **4,199** → **8,248** 基因（旧值 4,199 取自归档快照 `_planB_work/before_planB_20261001/panel_snapshot/panel_genes.txt`；注意 `wc -l` 会因末行无换行而各少算 1，正确值须按非空行数）；合格 regulon 口径 `min_targets=5`、**`max_targets=None`（不设上限）** → **778** 个（`step2_regulon.py` 的 `build_regulons()` 签名同步）。**旧口径 `max_targets=500` 正是把 `SP1`（429）、`NFKB1`（282）等大调控子排除、并把 regulon 数压到约 705 的原因**；新口径（只写下限）与 Methods 文本 `317 regulators with ≥ 5 panel targets`（全文未提上限）**反而更一致**。截断快照**留档不删**：`_planB_work/before_planB_20261001/CollecTRI_omnipath.tsv`（1,066,488 B，末行为半词截断的残缺记录 `O95644\tP12883\tNFATC1\tMYH7\tTru`）—— 按「历史快照不回改」，基于该快照的旧数值只在本文件版本记录中留痕，不再出现于现行 Table S10 / Fig. S6 / 正文。

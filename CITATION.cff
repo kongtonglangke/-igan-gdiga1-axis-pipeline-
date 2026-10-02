@@ -58,15 +58,17 @@ keywords:
   - single-cell eQTL
   - East Asian
 
+repository-code: "https://github.com/kongtonglangke/-igan-gdiga1-axis-pipeline-"
+
 # ---------------------------------------------------------------------------
 # 【待回填 · Zenodo publish 之后取消注释并填真实值】
 #
 # doi: "10.5281/zenodo.<NNNNNNN>"                      # Version DOI（对应 v1.0.0）
-# repository-code: "https://github.com/<account>/igan-gdiga1-axis-pipeline"
 # url: "https://doi.org/10.5281/zenodo.<NNNNNNN>"
 #
 # 说明：
 #   - doi 填 Zenodo 的 **Version DOI**（正文 Data Availability 引用的同一个）；
-#   - repository-code 填 GitHub 仓库地址（仓库名 igan-gdiga1-axis-pipeline，已定不再变动）；
+#   - repository-code 已于 2026-10-02 启用并填真实地址（仓库名 -igan-gdiga1-axis-pipeline-，
+#     首尾各一个连字符；早前记录的 igan-gdiga1-axis-pipeline（无连字符）写法有误）；
 #   - 回填后本文件三处（这里 / Zenodo 记录 / 正文声明）DOI 必须完全一致。
 # ---------------------------------------------------------------------------
