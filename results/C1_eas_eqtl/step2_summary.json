@@ -1,0 +1,310 @@
+{
+  "source": "ImmuNexUT E-GEAD-398 conditional_eQTL_FDR0.05 (Ota 2021 Cell; 416 Japanese; 28 subsets; hg38)",
+  "n_subsets": 28,
+  "n_axis_gene_rows": 11405,
+  "axis_eGene_breadth": {
+    "C1GALT1": {
+      "n_subsets_eGene": 28,
+      "subsets": [
+        "CD16p_Mono",
+        "CL_Mono",
+        "CM_CD8",
+        "DN_B",
+        "EM_CD8",
+        "Fr_III_T",
+        "Fr_II_eTreg",
+        "Fr_I_nTreg",
+        "Int_Mono",
+        "LDG",
+        "Mem_CD4",
+        "Mem_CD8",
+        "NC_Mono",
+        "NK",
+        "Naive_B",
+        "Naive_CD4",
+        "Naive_CD8",
+        "Neu",
+        "Plasmablast",
+        "SM_B",
+        "TEMRA_CD8",
+        "Tfh",
+        "Th1",
+        "Th17",
+        "Th2",
+        "USM_B",
+        "mDC",
+        "pDC"
+      ]
+    },
+    "C1GALT1C1": {
+      "n_subsets_eGene": 0,
+      "subsets": []
+    },
+    "GALNT2": {
+      "n_subsets_eGene": 27,
+      "subsets": [
+        "CD16p_Mono",
+        "CL_Mono",
+        "CM_CD8",
+        "DN_B",
+        "EM_CD8",
+        "Fr_III_T",
+        "Fr_II_eTreg",
+        "Fr_I_nTreg",
+        "Int_Mono",
+        "LDG",
+        "Mem_CD4",
+        "Mem_CD8",
+        "NC_Mono",
+        "NK",
+        "Naive_B",
+        "Naive_CD4",
+        "Naive_CD8",
+        "Neu",
+        "Plasmablast",
+        "SM_B",
+        "TEMRA_CD8",
+        "Tfh",
+        "Th1",
+        "Th17",
+        "Th2",
+        "mDC",
+        "pDC"
+      ]
+    },
+    "GALNT12": {
+      "n_subsets_eGene": 3,
+      "subsets": [
+        "CD16p_Mono",
+        "Mem_CD4",
+        "mDC"
+      ]
+    },
+    "ST6GALNAC2": {
+      "n_subsets_eGene": 12,
+      "subsets": [
+        "CD16p_Mono",
+        "CL_Mono",
+        "DN_B",
+        "Int_Mono",
+        "LDG",
+        "Mem_CD8",
+        "NC_Mono",
+        "Neu",
+        "SM_B",
+        "Th17",
+        "Th2",
+        "mDC"
+      ]
+    }
+  },
+  "B_lineage_conclusions": {
+    "C1GALT1": {
+      "Naive_B": {
+        "cell_subset": "Naive_B",
+        "gene": "C1GALT1",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 339,
+        "top_variant_rank0": "rs11771259",
+        "top_variant_pos": 7237584,
+        "top_nominal_P": 1.11009e-23,
+        "top_slope": 0.676198,
+        "min_nominal_P_any_signal": 1.11009e-23,
+        "B_lineage": "yes"
+      },
+      "USM_B": {
+        "cell_subset": "USM_B",
+        "gene": "C1GALT1",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 372,
+        "top_variant_rank0": "rs11771259",
+        "top_variant_pos": 7237584,
+        "top_nominal_P": 7.67313e-38,
+        "top_slope": 0.792802,
+        "min_nominal_P_any_signal": 7.67313e-38,
+        "B_lineage": "yes"
+      },
+      "SM_B": {
+        "cell_subset": "SM_B",
+        "gene": "C1GALT1",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 273,
+        "top_variant_rank0": "rs11771259",
+        "top_variant_pos": 7237584,
+        "top_nominal_P": 1.80609e-35,
+        "top_slope": 0.745649,
+        "min_nominal_P_any_signal": 1.80609e-35,
+        "B_lineage": "yes"
+      },
+      "DN_B": {
+        "cell_subset": "DN_B",
+        "gene": "C1GALT1",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 395,
+        "top_variant_rank0": "rs11771259",
+        "top_variant_pos": 7237584,
+        "top_nominal_P": 1.31691e-34,
+        "top_slope": 0.652872,
+        "min_nominal_P_any_signal": 1.31691e-34,
+        "B_lineage": "yes"
+      },
+      "Plasmablast": {
+        "cell_subset": "Plasmablast",
+        "gene": "C1GALT1",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 143,
+        "top_variant_rank0": "rs11771259",
+        "top_variant_pos": 7237584,
+        "top_nominal_P": 2.03871e-15,
+        "top_slope": 0.396847,
+        "min_nominal_P_any_signal": 2.03871e-15,
+        "B_lineage": "yes"
+      }
+    },
+    "C1GALT1C1": {
+      "Naive_B": null,
+      "USM_B": null,
+      "SM_B": null,
+      "DN_B": null,
+      "Plasmablast": null
+    },
+    "GALNT2": {
+      "Naive_B": {
+        "cell_subset": "Naive_B",
+        "gene": "GALNT2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 133,
+        "top_variant_rank0": "rs3811484",
+        "top_variant_pos": 230281583,
+        "top_nominal_P": 1.12205e-21,
+        "top_slope": 0.680067,
+        "min_nominal_P_any_signal": 1.12205e-21,
+        "B_lineage": "yes"
+      },
+      "USM_B": null,
+      "SM_B": {
+        "cell_subset": "SM_B",
+        "gene": "GALNT2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 5,
+        "top_variant_rank0": "rs61825397",
+        "top_variant_pos": 230130712,
+        "top_nominal_P": 2.22092e-05,
+        "top_slope": 0.373102,
+        "min_nominal_P_any_signal": 2.22092e-05,
+        "B_lineage": "yes"
+      },
+      "DN_B": {
+        "cell_subset": "DN_B",
+        "gene": "GALNT2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 30,
+        "top_variant_rank0": "rs12402067",
+        "top_variant_pos": 230286355,
+        "top_nominal_P": 5.48547e-09,
+        "top_slope": 0.19743,
+        "min_nominal_P_any_signal": 5.48547e-09,
+        "B_lineage": "yes"
+      },
+      "Plasmablast": {
+        "cell_subset": "Plasmablast",
+        "gene": "GALNT2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 75,
+        "top_variant_rank0": "rs13728",
+        "top_variant_pos": 230280472,
+        "top_nominal_P": 6.32126e-11,
+        "top_slope": 0.175205,
+        "min_nominal_P_any_signal": 6.32126e-11,
+        "B_lineage": "yes"
+      }
+    },
+    "GALNT12": {
+      "Naive_B": null,
+      "USM_B": null,
+      "SM_B": null,
+      "DN_B": null,
+      "Plasmablast": null
+    },
+    "ST6GALNAC2": {
+      "Naive_B": null,
+      "USM_B": null,
+      "SM_B": {
+        "cell_subset": "SM_B",
+        "gene": "ST6GALNAC2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 68,
+        "top_variant_rank0": "rs10852770",
+        "top_variant_pos": 76580958,
+        "top_nominal_P": 2.04164e-19,
+        "top_slope": 0.559573,
+        "min_nominal_P_any_signal": 2.04164e-19,
+        "B_lineage": "yes"
+      },
+      "DN_B": {
+        "cell_subset": "DN_B",
+        "gene": "ST6GALNAC2",
+        "is_eGene_FDR0.05": "yes",
+        "n_independent_signals": 82,
+        "top_variant_rank0": "rs9906851",
+        "top_variant_pos": 76575066,
+        "top_nominal_P": 4.68862e-17,
+        "top_slope": 0.447556,
+        "min_nominal_P_any_signal": 4.68862e-17,
+        "B_lineage": "yes"
+      },
+      "Plasmablast": null
+    }
+  },
+  "lead_variant_query": [
+    {
+      "lead": "rs13226913",
+      "pos": 7207215,
+      "present_as_independent_signal": true,
+      "subsets_with_hit": [
+        "EM_CD8",
+        "Naive_CD4",
+        "Neu"
+      ],
+      "nearest_C1GALT1_signal": {
+        "subset": "EM_CD8",
+        "variant": "rs13226913",
+        "pos": 7207215,
+        "distance_bp": 0
+      }
+    },
+    {
+      "lead": "rs10238682",
+      "pos": 7215386,
+      "present_as_independent_signal": true,
+      "subsets_with_hit": [
+        "CD16p_Mono",
+        "CL_Mono",
+        "DN_B",
+        "EM_CD8",
+        "Int_Mono",
+        "LDG",
+        "Mem_CD8",
+        "NC_Mono",
+        "NK",
+        "Naive_B",
+        "Naive_CD8",
+        "Neu",
+        "SM_B",
+        "TEMRA_CD8",
+        "Tfh",
+        "Th17",
+        "Th2",
+        "USM_B",
+        "mDC",
+        "pDC"
+      ],
+      "nearest_C1GALT1_signal": {
+        "subset": "CD16p_Mono",
+        "variant": "rs10238682",
+        "pos": 7215386,
+        "distance_bp": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "n_motifs": 879,
+  "n_hits": 1122,
+  "n_methylation_sensitive_raw_hits": 375,
+  "n_region_tf_rows": 242,
+  "n_methylation_sensitive_hits": 242,
+  "n_candidate_TFs": 178,
+  "step2_n_passed_emp05": 84,
+  "step2_n_passed_qemp010": 1,
+  "intersect_with_step2": [],
+  "intersect_with_step2_broad": [
+    "ASCL1",
+    "E2F6",
+    "ETV6",
+    "FOXA2",
+    "HOXA9",
+    "MYC",
+    "MYCN",
+    "SMAD3",
+    "SNAI1",
+    "SP2",
+    "SP3",
+    "TCF12",
+    "TCF3",
+    "ZNF148"
+  ]
+}

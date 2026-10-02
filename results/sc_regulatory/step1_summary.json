@@ -1,0 +1,26 @@
+{
+  "n_cells": 282463,
+  "n_subsample": 30000,
+  "n_communities": 15,
+  "embedding": "UMAP",
+  "n_hvg_used": 1726,
+  "pca_var_explained_50": 124.400634765625,
+  "celltype_counts": {
+    "T": 164646,
+    "NK": 48953,
+    "Plasma": 27069,
+    "Other": 17036,
+    "B": 14967,
+    "Mono": 3814,
+    "DC": 2705,
+    "Platelet": 2453,
+    "pDC": 652,
+    "HSPC": 168
+  },
+  "b_subset_counts": {
+    "B_naive": 27093,
+    "B_memory": 8392,
+    "B_plasma": 6301,
+    "B_other": 250
+  }
+}

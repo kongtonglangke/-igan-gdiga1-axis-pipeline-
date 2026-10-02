@@ -1,0 +1,33 @@
+S4a cols: ['gene', 'dataset', 'chr', 'pos', 'eQTL_beta', 'IgAN_EA', 'IgAN_OA', 'IgAN_beta', 'IgAN_SE', 'IgAN_EAF', 'IgAN_P']
+S4a row: {'gene': 'C1GALT1', 'dataset': 'OneK1K_B_naive', 'chr': '7', 'pos': '7183473', 'eQTL_beta': '0.1811', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'GALNT2', 'dataset': 'OneK1K_B_naive', 'chr': '1', 'pos': '230279547', 'eQTL_beta': '0.2841', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'C1GALT1', 'dataset': 'GTEx_v10_blood', 'chr': '7', 'pos': '7223408', 'eQTL_beta': '-0.5073', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'C1GALT1', 'dataset': 'GTEx_v10_kidney_cortex', 'chr': '7', 'pos': '7182144', 'eQTL_beta': '0.9444', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'GALNT12', 'dataset': 'GTEx_v10_blood', 'chr': '9', 'pos': '99691091', 'eQTL_beta': '0.5277', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'GALNT12', 'dataset': 'GTEx_v10_kidney_cortex', 'chr': '9', 'pos': '99315366', 'eQTL_beta': '0.4449', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'ST6GALNAC2', 'dataset': 'GTEx_v10_blood', 'chr': '17', 'pos': '76575845', 'eQTL_beta': '0.2111', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'ST6GALNAC2', 'dataset': 'GTEx_v10_kidney_cortex', 'chr': '17', 'pos': '76566488', 'eQTL_beta': '-0.5707', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'GALNT2', 'dataset': 'GTEx_v10_blood', 'chr': '1', 'pos': '230529311', 'eQTL_beta': '0.096', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+S4a row: {'gene': 'GALNT2', 'dataset': 'GTEx_v10_kidney_cortex', 'chr': '1', 'pos': '231049260', 'eQTL_beta': '-0.3746', 'IgAN_EA': 'NA', 'IgAN_OA': 'NA', 'IgAN_beta': 'NA', 'IgAN_SE': 'NA', 'IgAN_EAF': 'NA', 'IgAN_P': 'NOT_FOUND'}
+m = 20
+rank 1 S4b:GALNT12                  P=9.4400e-06  Px13/1=1.8880e-04  q_stepup=9.4400e-05
+rank 2 S4b:GALNT12                  P=9.4400e-06  Px13/2=9.4400e-05  q_stepup=9.4400e-05
+rank 3 S4b:GALNT2                   P=1.0700e-04  Px13/3=7.1333e-04  q_stepup=3.6571e-04
+rank 4 S4b:GALNT2                   P=1.0700e-04  Px13/4=5.3500e-04  q_stepup=3.6571e-04
+rank 5 S4b:GALNT2                   P=1.0700e-04  Px13/5=4.2800e-04  q_stepup=3.6571e-04
+rank 6 S4b:ST6GALNAC2               P=1.2800e-04  Px13/6=4.2667e-04  q_stepup=3.6571e-04
+rank 7 S4b:ST6GALNAC2               P=1.2800e-04  Px13/7=3.6571e-04  q_stepup=3.6571e-04
+rank 8 S4b:C1GALT1                  P=5.5700e-04  Px13/8=1.3925e-03  q_stepup=1.1140e-03
+rank 9 S4b:C1GALT1                  P=5.5700e-04  Px13/9=1.2378e-03  q_stepup=1.1140e-03
+rank10 S4b:C1GALT1                  P=5.5700e-04  Px13/10=1.1140e-03  q_stepup=1.1140e-03
+rank11 S4a:?/pos                    P=7.1821e+06  Px13/11=1.3058e+07  q_stepup=1.1113e+07
+rank12 S4a:?/pos                    P=7.1835e+06  Px13/12=1.1972e+07  q_stepup=1.1113e+07
+rank13 S4a:?/pos                    P=7.2234e+06  Px13/13=1.1113e+07  q_stepup=1.1113e+07
+rank14 S4a:?/pos                    P=7.6566e+07  Px13/14=1.0938e+08  q_stepup=1.0210e+08
+rank15 S4a:?/pos                    P=7.6576e+07  Px13/15=1.0210e+08  q_stepup=1.0210e+08
+rank16 S4a:?/pos                    P=9.9315e+07  Px13/16=1.2414e+08  q_stepup=1.1728e+08
+rank17 S4a:?/pos                    P=9.9691e+07  Px13/17=1.1728e+08  q_stepup=1.1728e+08
+rank18 S4a:?/pos                    P=2.3028e+08  Px13/18=2.5587e+08  q_stepup=2.3105e+08
+rank19 S4a:?/pos                    P=2.3053e+08  Px13/19=2.4266e+08  q_stepup=2.3105e+08
+rank20 S4a:?/pos                    P=2.3105e+08  Px13/20=2.3105e+08  q_stepup=2.3105e+08
+=> smallest window q: 9.439999999999999e-05

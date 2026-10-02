@@ -1,0 +1,6 @@
+cpg	chr	pos37	lead_hits	info
+cg04827551	7	7268805	rs10238682,rs13226913	{'weighted_mean': 0.794370022193874, 'name': 'cg04827551', 'probetype': 'ii', 'qc_zhou': 0, 'pos': 7268805, 'chr': 7, 'samplesize': 25560, 'weighted_sd': 0.0273139067629375, 'qc_twinsuk': 0, 'assoc_class': 'cis only'}
+cg16101574	7	7291514	rs10238682,rs13226913	{'weighted_mean': 0.276411671808084, 'name': 'cg16101574', 'probetype': 'ii', 'qc_zhou': 0, 'pos': 7291514, 'chr': 7, 'samplesize': 25095, 'weighted_sd': 0.029300102107751, 'qc_twinsuk': 0, 'assoc_class': 'cis only'}
+cg19603390	7	7222222	rs10238682,rs13226913	{'weighted_mean': 0.0162879620844115, 'name': 'cg19603390', 'probetype': 'i', 'qc_zhou': 0, 'pos': 7222222, 'chr': 7, 'samplesize': 24988, 'weighted_sd': 0.00210241545307748, 'qc_twinsuk': 0, 'assoc_class': 'cis only'}
+cg17994788	7	7261594	rs13226913	{'weighted_mean': 0.789968743188342, 'name': 'cg17994788', 'probetype': 'ii', 'qc_zhou': 0, 'pos': 7261594, 'chr': 7, 'samplesize': 28181, 'weighted_sd': 0.0193629366848184, 'qc_twinsuk': 0, 'assoc_class': 'cis only'}
+cg19473623	7	7224869	rs10238682,rs13226913	{'weighted_mean': 0.471737057112983, 'name': 'cg19473623', 'probetype': 'ii', 'qc_zhou': 0, 'pos': 7224869, 'chr': 7, 'samplesize': 24988, 'weighted_sd': 0.0169452884913255, 'qc_twinsuk': 0, 'assoc_class': 'cis only'}

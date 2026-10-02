@@ -1,0 +1,5 @@
+variant	chr	hg19_bp	A1	A2	BETA	SE	P	status
+rs13226913	7	7246846	t	c	0.0011	0.0109	0.9167	tested
+rs10238682	7	7255017	a	g	-0.0152	0.0123	0.2164	tested
+rs5910940	X	119758810	-	-	-	-	-	not testable
+rs7856182	9	101633312	t	c	-0.0199	0.0145	0.1695	tested

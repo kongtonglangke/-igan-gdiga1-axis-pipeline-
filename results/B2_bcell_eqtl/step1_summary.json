@@ -1,0 +1,198 @@
+{
+  "n_leads": 2,
+  "subsets": [
+    "B_naive",
+    "B_intermediate",
+    "B_memory"
+  ],
+  "effects": [
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "subset": "B_naive",
+      "beta": 0.173861,
+      "se": 0.0390239,
+      "p": 9.35888e-06,
+      "af": 0.404082,
+      "ma_samples": 631
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "subset": "B_intermediate",
+      "beta": 0.0353281,
+      "se": 0.0419633,
+      "p": 0.400064,
+      "af": 0.405322,
+      "ma_samples": 631
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "subset": "B_memory",
+      "beta": 0.0811529,
+      "se": 0.042422,
+      "p": 0.056044,
+      "af": 0.404179,
+      "ma_samples": 632
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "subset": "B_naive",
+      "beta": 0.185475,
+      "se": 0.047928,
+      "p": 0.00011621,
+      "af": 0.191837,
+      "ma_samples": 329
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "subset": "B_intermediate",
+      "beta": 0.0160543,
+      "se": 0.0515513,
+      "p": 0.755546,
+      "af": 0.191914,
+      "ma_samples": 328
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "subset": "B_memory",
+      "beta": 0.0711177,
+      "se": 0.0520736,
+      "p": 0.172346,
+      "af": 0.191641,
+      "ma_samples": 329
+    }
+  ],
+  "tests": [
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "fixed_effect_beta",
+      "stat": 0.10073156106021557,
+      "se": 0.023700851501710946,
+      "p": 2.1365207275804172e-05,
+      "note": "inverse-variance pooling of 3 subsets"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "cochran_Q",
+      "stat": 6.153942354116685,
+      "se": null,
+      "p": 0.04609867012274923,
+      "note": "df=2; I2=67.5%"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_naive_vs_B_intermediate",
+      "stat": 0.1385329,
+      "se": 0.057304304533778265,
+      "p": 0.015627725983455593,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_naive_vs_B_memory",
+      "stat": 0.09270809999999999,
+      "se": 0.057641051822550915,
+      "p": 0.1077543142784507,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_intermediate_vs_B_memory",
+      "stat": -0.0458248,
+      "se": 0.059670299403388284,
+      "p": 0.4425069978436482,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "metareg_naive_vs_experienced",
+      "stat": -0.1158695862115827,
+      "se": 0.0491212350129342,
+      "p": 0.018331703131450865,
+      "note": "x=0 naive, x=1 memory|intermediate"
+    },
+    {
+      "lead_rsid": "rs13226913",
+      "gene": "C1GALT1",
+      "test": "trend_per_stage",
+      "stat": -0.04881508929777446,
+      "se": 0.028788460085951935,
+      "p": 0.08995259775202112,
+      "note": "rank naive<intermediate<memory (WLS slope)"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "fixed_effect_beta",
+      "stat": 0.09573968729163794,
+      "se": 0.02910620554283241,
+      "p": 0.001004289951299536,
+      "note": "inverse-variance pooling of 3 subsets"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "cochran_Q",
+      "stat": 6.118394963401422,
+      "se": null,
+      "p": 0.04692533855612675,
+      "note": "df=2; I2=67.3%"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_naive_vs_B_intermediate",
+      "stat": 0.1694207,
+      "se": 0.07038913066440017,
+      "p": 0.01608788528410065,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_naive_vs_B_memory",
+      "stat": 0.1143573,
+      "se": 0.07077254411818187,
+      "p": 0.10612832312030815,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "pairwise_B_intermediate_vs_B_memory",
+      "stat": -0.055063400000000005,
+      "se": 0.07327480022934214,
+      "p": 0.4523732490275709,
+      "note": "difference in beta"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "metareg_naive_vs_experienced",
+      "stat": -0.14216652869448385,
+      "se": 0.060326245333043566,
+      "p": 0.018441702666560113,
+      "note": "x=0 naive, x=1 memory|intermediate"
+    },
+    {
+      "lead_rsid": "rs10238682",
+      "gene": "C1GALT1",
+      "test": "trend_per_stage",
+      "stat": -0.060154039019713675,
+      "se": 0.035347430547163675,
+      "p": 0.08879402455674583,
+      "note": "rank naive<intermediate<memory (WLS slope)"
+    }
+  ]
+}

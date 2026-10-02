@@ -1,0 +1,8 @@
+{
+  "n_combos_with_cs": 4,
+  "n_pair_tests": 7,
+  "all_pairs_PPH4_below_0_05": true,
+  "all_pairs_PPH4_below_0_5": true,
+  "max_PPH4_across_pairs": 0.030708061265901254,
+  "max_PPH3_across_pairs": 0.12710231596049681
+}

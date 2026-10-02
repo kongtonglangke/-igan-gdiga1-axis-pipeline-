@@ -1,0 +1,153 @@
+{
+  "n_b_cells": 42036,
+  "n_regulons": 778,
+  "target_rule": {
+    "min_targets": 5,
+    "max_targets": null,
+    "note": "2026-10-01 起不设上限；按自身靶数匹配的零分布"
+  },
+  "target_median": 23,
+  "target_max": 1322,
+  "n_combos": 2334,
+  "n_passed_emp05": 84,
+  "n_passed_q05": 1,
+  "n_passed_q10": 1,
+  "k_null": 1000,
+  "n_units": 103,
+  "b_subset_counts": {
+    "B_naive": 27093,
+    "B_memory": 8392,
+    "B_plasma": 6301,
+    "B_other": 250
+  },
+  "preaggregation_max_dev": 0.0,
+  "partial_control": {
+    "note": "剔除单元级全局协变量（面板全基因 z 的单元均值）后的偏相关",
+    "n_pairs": 2334,
+    "n_passed_q10": 3,
+    "max_targets_passing_q10": 13,
+    "file": "regulon_axis_partial.tsv"
+  },
+  "top_composite": [
+    {
+      "b_subset": "B_memory",
+      "tf": "FOXA1",
+      "rho": 0.9117948717948718,
+      "emp_p": 0.012,
+      "q_emp": 1.0,
+      "n_targets": 70
+    },
+    {
+      "b_subset": "B_memory",
+      "tf": "BCOR",
+      "rho": 0.9029059829059828,
+      "emp_p": 0.004,
+      "q_emp": 1.0,
+      "n_targets": 7
+    },
+    {
+      "b_subset": "B_memory",
+      "tf": "MBD1",
+      "rho": 0.9022222222222221,
+      "emp_p": 0.025,
+      "q_emp": 1.0,
+      "n_targets": 17
+    },
+    {
+      "b_subset": "B_memory",
+      "tf": "KMT2B",
+      "rho": 0.9001709401709401,
+      "emp_p": 0.025,
+      "q_emp": 1.0,
+      "n_targets": 15
+    },
+    {
+      "b_subset": "B_memory",
+      "tf": "MYCN",
+      "rho": 0.8967521367521367,
+      "emp_p": 0.029,
+      "q_emp": 1.0,
+      "n_targets": 138
+    },
+    {
+      "b_subset": "B_naive",
+      "tf": "ERF",
+      "rho": 0.9323076923076923,
+      "emp_p": 0.0,
+      "q_emp": 0.0,
+      "n_targets": 18
+    },
+    {
+      "b_subset": "B_naive",
+      "tf": "XBP1",
+      "rho": 0.9213675213675213,
+      "emp_p": 0.008,
+      "q_emp": 0.7590243902439024,
+      "n_targets": 54
+    },
+    {
+      "b_subset": "B_naive",
+      "tf": "ELK1",
+      "rho": 0.9179487179487179,
+      "emp_p": 0.006,
+      "q_emp": 0.7590243902439024,
+      "n_targets": 61
+    },
+    {
+      "b_subset": "B_naive",
+      "tf": "NCOA3",
+      "rho": 0.9172649572649573,
+      "emp_p": 0.003,
+      "q_emp": 0.7590243902439024,
+      "n_targets": 73
+    },
+    {
+      "b_subset": "B_naive",
+      "tf": "CREB1",
+      "rho": 0.9124786324786324,
+      "emp_p": 0.002,
+      "q_emp": 0.7590243902439024,
+      "n_targets": 460
+    },
+    {
+      "b_subset": "B_plasma",
+      "tf": "GRHL3",
+      "rho": 0.898119658119658,
+      "emp_p": 0.001,
+      "q_emp": 0.389,
+      "n_targets": 29
+    },
+    {
+      "b_subset": "B_plasma",
+      "tf": "UBTF",
+      "rho": 0.8885470085470085,
+      "emp_p": 0.002,
+      "q_emp": 0.5186666666666667,
+      "n_targets": 9
+    },
+    {
+      "b_subset": "B_plasma",
+      "tf": "DLX4",
+      "rho": 0.8851282051282051,
+      "emp_p": 0.003,
+      "q_emp": 0.5835,
+      "n_targets": 42
+    },
+    {
+      "b_subset": "B_plasma",
+      "tf": "FOXA2",
+      "rho": 0.8837606837606837,
+      "emp_p": 0.001,
+      "q_emp": 0.389,
+      "n_targets": 134
+    },
+    {
+      "b_subset": "B_plasma",
+      "tf": "HOXA9",
+      "rho": 0.8830769230769231,
+      "emp_p": 0.014,
+      "q_emp": 1.0,
+      "n_targets": 39
+    }
+  ]
+}

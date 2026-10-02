@@ -1,0 +1,20 @@
+{
+  "n_samples": 26,
+  "n_cells_total": 282463,
+  "n_cells_kept": 282463,
+  "n_genes_total": 36601,
+  "n_hvg": 2000,
+  "n_panel": 8248,
+  "panel_nnz": 237865572,
+  "min_counts": 500,
+  "min_genes": 200,
+  "axis_present": [
+    "C1GALT1",
+    "C1GALT1C1",
+    "GALNT2",
+    "GALNT12",
+    "ST6GALNAC2"
+  ],
+  "axis_missing": [],
+  "elapsed_sec": 491.7
+}

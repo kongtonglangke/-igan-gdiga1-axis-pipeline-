@@ -1,0 +1,15 @@
+m = 13
+rank 1 S4b:GALNT12                  P=9.4400e-06  Px13/1=1.2272e-04  q_stepup=6.1360e-05
+rank 2 S4b:GALNT12                  P=9.4400e-06  Px13/2=6.1360e-05  q_stepup=6.1360e-05
+rank 3 S4b:GALNT2                   P=1.0700e-04  Px13/3=4.6367e-04  q_stepup=2.3771e-04
+rank 4 S4b:GALNT2                   P=1.0700e-04  Px13/4=3.4775e-04  q_stepup=2.3771e-04
+rank 5 S4b:GALNT2                   P=1.0700e-04  Px13/5=2.7820e-04  q_stepup=2.3771e-04
+rank 6 S4b:ST6GALNAC2               P=1.2800e-04  Px13/6=2.7733e-04  q_stepup=2.3771e-04
+rank 7 S4b:ST6GALNAC2               P=1.2800e-04  Px13/7=2.3771e-04  q_stepup=2.3771e-04
+rank 8 S4b:C1GALT1                  P=5.5700e-04  Px13/8=9.0513e-04  q_stepup=7.2410e-04
+rank 9 S4b:C1GALT1                  P=5.5700e-04  Px13/9=8.0456e-04  q_stepup=7.2410e-04
+rank10 S4b:C1GALT1                  P=5.5700e-04  Px13/10=7.2410e-04  q_stepup=7.2410e-04
+rank11 lead:rs7856182               P=1.0040e-01  Px13/11=1.1865e-01  q_stepup=1.1865e-01
+rank12 lead:rs10238682              P=2.2200e-01  Px13/12=2.4050e-01  q_stepup=2.4050e-01
+rank13 lead:rs13226913              P=2.8420e-01  Px13/13=2.8420e-01  q_stepup=2.8420e-01
+=> smallest window q: 6.136e-05

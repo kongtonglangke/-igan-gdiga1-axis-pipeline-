@@ -1,0 +1,6 @@
+gene	chr	lead_x_IgAN_P	lead_x_GdIgA1_P	coloc_n_calc	coloc_n_context	coloc_max_PPH4	cis_eQTL_region_minP	conclusion
+C1GALT1	7	rs13226913=0.284; rs10238682=0.222	rs13226913=0.011; rs10238682=1.2e-09	5	5	0.0109	0.00056	不支持共享
+C1GALT1C1	X	rs5910940=未命中	rs5910940=0.004	0	5	不可算	无cis-eQTL顶变异/未检验	物理不可行(X)
+GALNT12	9	rs7856182=0.1	rs7856182=2.4e-09	2	2	0.0051	9.4e-06	不支持共享
+GALNT2	1			5	5	0.0090	0.00011	不支持共享
+ST6GALNAC2	17			2	2	0.0308	0.00013	不支持共享
