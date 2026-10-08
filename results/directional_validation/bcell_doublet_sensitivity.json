@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "n_cells_total": 282463,
+    "n_blineage": 42259,
+    "doublet_proxy_rule": "nFeature > per-sample 99.0th percentile",
+    "n_doublet_proxy_all": 2831,
+    "n_doublet_proxy_in_blineage": 972,
+    "naive_n": 23458,
+    "naive_nfeat_median": 1614.0,
+    "naive_libsize_median": 4454.5,
+    "naive_doublet_proxy_frac": 0.011211526984397646,
+    "memory_n": 2403,
+    "memory_nfeat_median": 2089.0,
+    "memory_libsize_median": 6585.0,
+    "memory_doublet_proxy_frac": 0.03537245110278818,
+    "plasma_n": 16398,
+    "plasma_nfeat_median": 1856.0,
+    "plasma_libsize_median": 5448.0,
+    "plasma_doublet_proxy_frac": 0.0380534211489206,
+    "plasma_vs_naive_doublet_oddsratio": 3.4888426399316197,
+    "plasma_vs_naive_doublet_fisher_P": 1.6024331941269423e-70
+  },
+  "reports": [
+    {
+      "analysis": "all_blineage",
+      "note": "marker-gated B-lineage, no doublet removal",
+      "n_cells": 282463,
+      "C1GALT1_naive_det": 0.22678830249808168,
+      "C1GALT1_plasma_det": 0.25551896572752775,
+      "C1GALT1_fisher_P": 3.987310880026906e-11,
+      "C1GALT1_donor_naive_mean": 0.22309156040026293,
+      "C1GALT1_donor_plasma_mean": 0.2550999704777902,
+      "C1GALT1_donor_wilcoxon_P": 0.00010919570922851562,
+      "C1GALT1_n_donors": 26,
+      "C1GALT1C1_naive_det": 0.0314178531844147,
+      "C1GALT1C1_plasma_det": 0.05238443712647884,
+      "C1GALT1C1_fisher_P": 2.844846174845769e-25,
+      "C1GALT1C1_donor_naive_mean": 0.03168320764452472,
+      "C1GALT1C1_donor_plasma_mean": 0.051702047403015344,
+      "C1GALT1C1_donor_wilcoxon_P": 7.450580596923828e-07,
+      "C1GALT1C1_n_donors": 26
+    },
+    {
+      "analysis": "doublet_removed",
+      "note": "high-nFeature (top 1% per sample) cells removed",
+      "n_cells": 279632,
+      "C1GALT1_naive_det": 0.22366889415822375,
+      "C1GALT1_plasma_det": 0.24388233802459744,
+      "C1GALT1_fisher_P": 3.790949311149386e-06,
+      "C1GALT1_donor_naive_mean": 0.21954972101185574,
+      "C1GALT1_donor_plasma_mean": 0.24394415417485893,
+      "C1GALT1_donor_wilcoxon_P": 0.0017795562744140625,
+      "C1GALT1_n_donors": 26,
+      "C1GALT1C1_naive_det": 0.030092692390601423,
+      "C1GALT1C1_plasma_det": 0.04488398630658045,
+      "C1GALT1C1_fisher_P": 2.836695819806815e-14,
+      "C1GALT1C1_donor_naive_mean": 0.03038502207564368,
+      "C1GALT1C1_donor_plasma_mean": 0.04485889062646691,
+      "C1GALT1C1_donor_wilcoxon_P": 2.2709369659423828e-05,
+      "C1GALT1C1_n_donors": 26
+    }
+  ]
+}

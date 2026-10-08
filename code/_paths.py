@@ -90,6 +90,8 @@ RAWDATA = _first_dir(
     os.path.join(REPO, "rawdata"),
     os.path.join(_ENGINE, "00_rawdata"),
     os.path.join(_ENGINE, "rawdata"),
+    os.path.join(_PROJECT, "00_rawdata"),
+    os.path.join(_PROJECT, "rawdata"),
 ) or os.path.join(_ENGINE, "00_rawdata")
 
 # --------------------------------------------------------------------------

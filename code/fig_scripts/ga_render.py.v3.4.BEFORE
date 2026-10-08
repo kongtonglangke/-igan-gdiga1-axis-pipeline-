@@ -1,0 +1,174 @@
+"""ga_render.py — Graphical Abstract（2026-09-06 步骤 4.3 制作第八图·收尾）
+作者：AI 王严课题组代办｜依赖：matplotlib（fig43 venv）
+
+设计：横向 landscape 244×95 mm（GM 平台约略规格）
+  - 左：外周 B/plasma cell → O-糖基化轴（C1GALT1C1 等 5 基因）→ Gd-IgA1 ↑ 生成
+  - 中：一刀切出"与 IgAN 易感无共享因果结构"分隔层（coloc 阴性）
+  - 右：获得性表观可逆窗（C1GALT1C1 启动子，5-azacytidine / EGCG）→ 干预出口
+  - 无数据锚点、无面板号；纯概念速览，与 Fig1a 防重复
+
+v2.0 2026-09-06 4.4 整合审计轮（分隔标签下移 y=0.32 + 底部 note 左移 x=2.5,y=0.55）
+v3.0 2026-09-07 用户过审轮（_ga_check.py 自检驱动，见文件头记录）
+v3.1 2026-09-10 全稿复查轮：修复 "not driven by germline axis genetics" 灰色标注
+     压住右侧 "Epigenetic window" 方框左上角、且斜向虚线箭头穿过 "axis" 一词的
+     重叠（标注移至 x=6.5,y=3.38、字号 6.8pt，落入虚线右/方框左的净空子间隙）。
+v3.2 2026-09-10 方案 A（L7 上游调控层）回补轮——用户决策 ⒞「回补」：
+     在右侧 Epigenetic window 方框下方新增一枚**上游回路注释条**（浅绿底、
+     绿色描边，与右窗同色系），文字 "upstream circuit (L7) / cytokine →
+     DNMT1 → Sp/KLF"，并以绿色箭头**向上**指入 Epigenetic window 方框
+     （语义：回路作用于 C1GALT1C1 启动子＝干预窗所在位点）。
+     选位理由：该区（x 7.0–9.6, y 0.15–0.67）在 v3.1 中为空白，加入后
+     不动任何既有元素；上方（y 3.30–3.78）仅余 ~0.47 unit，塞不下
+     "注释条+箭头"且会挤压顶部标题——故置于下方并令箭头指入方框。
+     对应正文 Results R8 / Fig. 1c 第七行 L7；图注草案同步补此句。
+v3.3 2026-09-10 作者决策③「去编号」：图内注释条文字由
+     "upstream circuit (L7)" 改为 "upstream circuit"（去掉内部层号，与
+     投稿正文全面去内部编号的口径一致）；几何/配色/箭头均不变，其余
+     元素与 v3.2 完全一致。
+
+写：阶段4/主图/out/GA_v3.3.{png,pdf,tiff}（v3.0/v3.1/v3.2 留档不删）
+"""
+from __future__ import annotations
+
+import os
+import sys
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from style_common import (  # noqa: E402
+    OKABE_ITO, C_GW_LINE,
+    save_final, mm_to_in,
+)
+
+OUT_DIR = os.path.join(os.path.dirname(HERE), "out")
+os.makedirs(OUT_DIR, exist_ok=True)
+
+
+def draw_ga(ax):
+    """在给定 ax 上绘制 Graphical Abstract 全部内容（与 main() 网格一致：
+    xlim 0-10 / ylim 0-4 / axis off）。拆出独立函数供 _ga_check.py 复用。"""
+    # v3.0：subplot 铺满画布（GA 无轴无刻度，无需 fraction 边距）——
+    # 默认 left=0.125/right=0.9 使数据区仅 2,234px 宽，顶部标题 89 字符
+    # ~2,500px 超右缘 133px（v1.0/v2.0 全靠 bbox_inches='tight' 兜住）。
+    fig = ax.figure
+    fig.subplots_adjust(left=0.02, right=0.98, top=0.97, bottom=0.03)
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 4)
+    ax.axis("off")
+
+    # === 左侧：B/plasma cell ===
+    box1 = FancyBboxPatch((0.2, 1.0), 2.2, 2.2,
+                          boxstyle="round,pad=0.1",
+                          facecolor="#E5F1F7", edgecolor="black", lw=1.8)
+    ax.add_patch(box1)
+    ax.text(1.3, 2.7, "B / plasma cell",
+            ha="center", va="center", fontsize=11, weight="bold", color="black")
+    ax.text(1.3, 1.7, "IgA1\nO-glycosylation\naxis",
+            ha="center", va="center", fontsize=9, color="black")
+
+    # === 中央左侧：5 基因轴 → Gd-IgA1 ===
+    box2 = FancyBboxPatch((3.0, 1.0), 2.6, 2.2,
+                          boxstyle="round,pad=0.1",
+                          facecolor="#FFE9C9", edgecolor="black", lw=1.8)
+    ax.add_patch(box2)
+    ax.text(4.3, 2.7, "Gd-IgA1 generation \u2191",
+            ha="center", va="center", fontsize=11, weight="bold", color="black")
+    ax.text(4.3, 1.7,
+            "C1GALT1 / C1GALT1C1\nGALNT2 / GALNT12 / ST6GALNAC2",
+            ha="center", va="center", fontsize=8, color="black")
+
+    # 箭头
+    arr = dict(arrowstyle="->", color="black", lw=1.5, mutation_scale=18)
+    ax.annotate("", xy=(3.0, 2.1), xytext=(2.4, 2.1), arrowprops=arr)
+
+    # === 中央分隔：no shared causal structure（移至最下方，避开 box2）===
+    ax.plot([6.0, 6.0], [0.7, 3.6], color=C_GW_LINE, lw=2.5, ls="--", zorder=2)
+    # 分隔标签（白底骑在分隔线下段，避 box2 y=1.0 底缘之上无重叠：
+    # x=6.0 在 box2(右缘5.6) 与 box3(左缘7.0) 的 x 间隙 1.4 unit 内，
+    # bbox 宽 323px≈1.15 unit 不触任一 box）
+    # v3.0 修复：v1.0/v2.0 用 y=0.32 + va='top' —— 3 行 8.5pt 文字 +
+    # pad 0.3 白底总高 128px≈0.46 unit 向下延伸穿出 ylim 0 下缘（-0.14
+    # unit），全靠 bbox_inches='tight' 兜住才视觉"正常"。改 va='center'
+    # y=0.85：bbox 0.62..1.08 完全收在画布内（底 0.62 > 0.03 底边）。
+    ax.text(6.0, 0.85, "no shared\ncausal structure\nwith IgAN",
+            ha="center", va="center", fontsize=8.5, color=C_GW_LINE,
+            weight="bold", style="italic",
+            bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
+                      edgecolor=C_GW_LINE, lw=0.8))
+    # 右侧（不驱动的箭头）：从 box2 顶角 → 右 box 顶角
+    ax.annotate("", xy=(7.0, 3.4), xytext=(5.6, 2.7),
+                arrowprops=dict(arrowstyle="->", color="gray", lw=1.0,
+                                linestyle=":", mutation_scale=14))
+    # "not driven by germline axis genetics" 文字放在箭头右半上方（远离顶部标题）
+    # v3.1 修复：v3.0 置于 x=6.65,y=3.15,va='bottom' —— 3 行 7.5pt 文字块右缘越过
+    # box3 左缘 x=7.0 并压在 box3 左上角，且斜向虚线箭头穿过 "axis" 一词。v3.1 移入
+    # 【虚线 x=6.0 右侧 / box3 左缘 x=7.0 左侧】净空子间隙的中轴 x=6.5，上移到斜箭头
+    # 端点(y=3.4)之上、顶部标题(y≥3.78)之下，字号 7.5→6.5pt 收窄文字块宽度。
+    ax.text(6.5, 3.40, "not driven by\ngermline axis\ngenetics",
+            ha="center", va="bottom", fontsize=6.5, color="gray",
+            style="italic")
+
+    # === 右侧：表观干预窗 ===
+    box3 = FancyBboxPatch((7.0, 1.0), 2.6, 2.2,
+                          boxstyle="round,pad=0.1",
+                          facecolor="#A8E6CF", edgecolor="#00755E", lw=2.0)
+    ax.add_patch(box3)
+    ax.text(8.3, 2.8, "Epigenetic window",
+            ha="center", va="center", fontsize=11, weight="bold", color="#00755E")
+    # 副说明：三行，行距加大
+    ax.text(8.3, 2.20, "C1GALT1C1 promoter",
+            ha="center", va="center", fontsize=9, color="black")
+    ax.text(8.3, 1.80, "(reversible)",
+            ha="center", va="center", fontsize=9, color="black", style="italic")
+    ax.text(8.3, 1.40, "5-aza DNMTi \u00b7 EGCG",
+            ha="center", va="center", fontsize=9, weight="bold", color="black")
+
+    # 箭头（与 box3 左侧对齐）
+    ax.annotate("", xy=(7.0, 2.1), xytext=(6.5, 2.1), arrowprops=arr)
+
+    # === 上游调控回路注释条（L7，v3.2 新增）===
+    # 位置 x 7.0–9.6 / y 0.20–0.62（pad 0.05 → 视觉 0.15–0.67），与 box3 视觉底缘
+    # y=0.90 留 0.23 unit（≈64px）净空，绿箭头由 0.67 向上指入方框底缘 0.90。
+    # 该区域在 v3.1 为空白；左侧底部 note（x 2.5）与中央 "no shared" 标签
+    # （bbox x 5.45–6.55, y 0.58–1.12）均无水平重叠。
+    band = FancyBboxPatch((6.95, 0.20), 2.7, 0.42,
+                          boxstyle="round,pad=0.05",
+                          facecolor="#E8F8F0", edgecolor="#00755E", lw=1.3)
+    ax.add_patch(band)
+    ax.text(8.3, 0.41,
+            "upstream circuit\ncytokine \u2192 DNMT1 \u2192 Sp/KLF",
+            ha="center", va="center", fontsize=7.5, color="black")
+    ax.annotate("", xy=(8.3, 0.90), xytext=(8.3, 0.67),
+                arrowprops=dict(arrowstyle="->", color="#00755E", lw=1.4,
+                                mutation_scale=16))
+
+    # === 顶部小标题 ===
+    ax.text(5.0, 3.85,
+            "O-glycosylation axis: Gd-IgA1 driven by acquired epigenetic control, not IgAN-susceptibility germline genetics",
+            ha="center", va="center", fontsize=9.5, weight="bold", color="black",
+            style="italic")
+
+    # === 底部小字（NA caveat & valid window） ===
+    # x=2.5 左侧 + y=0.55（va='bottom'：底缘 0.55，与"no shared"标签
+    # 左缘 5.42 相距 0.8+ unit 无水平叠）
+    ax.text(2.5, 0.55,
+            "(IL-4 induces C1GALT1C1 promoter hypermethylation;\nreversible by DNMTi; X chr caveat applies)",
+            ha="center", va="bottom", fontsize=7.5, color="black", style="italic")
+
+
+def main():
+    # 横向 landscape（加大高度容纳三行 box 文字 + 分隔框下移）
+    fig = plt.figure(figsize=(mm_to_in(244), mm_to_in(95)), dpi=300)
+    ax = fig.add_subplot(111)
+    draw_ga(ax)
+
+    out_stem = os.path.join(OUT_DIR, os.environ.get("OUT_STEM", "GA_v3.3"))
+    save_final(fig, out_stem)
+    plt.close(fig)
+    print("WROTE", out_stem + ".png")
+
+
+if __name__ == "__main__":
+    main()

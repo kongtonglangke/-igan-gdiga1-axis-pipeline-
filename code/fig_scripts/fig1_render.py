@@ -334,9 +334,11 @@ def panel_b(ax):
     cbar.ax.tick_params(labelsize=FS_TICK - 0.5)
     cbar.set_label("logFC (IgAN vs Ctrl)", fontsize=FS_TICK - 0.5)
 
-    # 星号注释：放 axes 下方独立 fig-level 区域（不与 colorbar 冲突）
+    # 星号注释（v4.4 2026-10-08）：显式声明星号是**效应量阈值**而非"名义显著"，
+    # 回应审稿意见「星号=显著性，此标记会系统性贬低肾脏侧的 nominally significant 结果」。
+    # 只改这一行文字措辞，不改判据（pvals<0.05 & |logFC|>1）、不改任何数值/几何。
     ax.text(0.0, -0.32,
-            "* P<0.05 & |logFC|>1; PBMC uniformly down (5/5); kidney directionally separated",
+            "* effect-size cutoff (P<0.05 & |logFC|>1), not nominal significance; PBMC uniformly down (5/5); kidney directionally separated",
             transform=ax.transAxes, fontsize=FS_TICK - 0.5,
             ha="left", va="top", color="black")
 

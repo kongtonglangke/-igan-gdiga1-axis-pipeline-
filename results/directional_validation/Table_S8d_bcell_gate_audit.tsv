@@ -1,0 +1,86 @@
+section	metric	value
+composition:plasma_marker_high	n_cells	16398
+composition:plasma_marker_high	MS4A1_positive	0.9536528844981095
+composition:plasma_marker_high	CD19_positive	0.5845225027442371
+composition:plasma_marker_high	CD79A_positive	0.9632272228320526
+composition:plasma_marker_high	CD79B_positive	0.9055372606415416
+composition:plasma_marker_high	MS4A1_or_CD19_positive	0.969264544456641
+composition:plasma_marker_high	XBP1_positive	0.3779119404805464
+composition:plasma_marker_high	PRDM1_positive	0.17947310647639955
+composition:plasma_marker_high	JCHAIN_positive	0.7092328332723503
+composition:plasma_marker_high	MZB1_positive	0.4261495304305403
+composition:plasma_marker_high	all_four_plasma_markers_positive	0.022380778143676058
+composition:plasma_marker_high	any_plasma_marker_positive	1.0
+composition:plasma_marker_high	combined_plasma_score_median	2.2531048351187897
+composition:plasma_marker_high	combined_plasma_score_p90	3.6562217079979864
+composition:naive	n_cells	23458
+composition:naive	MS4A1_positive	0.970457839543013
+composition:naive	CD19_positive	0.6272913291840737
+composition:naive	CD79A_positive	0.9691789581379486
+composition:naive	CD79B_positive	0.891849262511723
+composition:naive	MS4A1_or_CD19_positive	0.9803478557421775
+composition:naive	XBP1_positive	0.09983800835535851
+composition:naive	PRDM1_positive	0.029201125415636457
+composition:naive	JCHAIN_positive	0.12140847472077756
+composition:naive	MZB1_positive	0.10682922670304373
+composition:naive	all_four_plasma_markers_positive	0.0
+composition:naive	any_plasma_marker_positive	0.3441469861028221
+composition:naive	combined_plasma_score_median	0.0
+composition:naive	combined_plasma_score_p90	1.2169332305156084
+composition:gate_rules	gate_rule_plasma	sum of log1p CPM of XBP1/PRDM1/JCHAIN/MZB1 >= log1p(3)
+composition:gate_rules	gate_priority	B-lineage gate first; plasma-like overrides naive/memory
+composition:gate_rules	plasma_marker_high_frac_of_blineage	0.3880356847062164
+definition_crosscheck:unsupervised atlas — compartment	level_a	B
+definition_crosscheck:unsupervised atlas — compartment	level_b	Plasma
+definition_crosscheck:unsupervised atlas — compartment	n_cells_a	14967
+definition_crosscheck:unsupervised atlas — compartment	n_cells_b	27069
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_detection_B	0.21400414244671612
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_detection_Plasma	0.24489268166537367
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_fisher_P	6.718247936189278e-13
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_donor_mean_B	0.21317835168126717
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_donor_mean_Plasma	0.24476567068046245
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_donor_paired_wilcoxon_P	3.7550926208496094e-05
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1_n_donors	26
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_detection_B	0.0321373688781987
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_detection_Plasma	0.04861649857770882
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_fisher_P	3.4824245361581916e-16
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_donor_mean_B	0.032635850519133675
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_donor_mean_Plasma	0.04814443648603784
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_donor_paired_wilcoxon_P	1.6391277313232422e-06
+definition_crosscheck:unsupervised atlas — compartment	C1GALT1C1_n_donors	26
+definition_crosscheck:unsupervised atlas — sub-partition	level_a	B_naive
+definition_crosscheck:unsupervised atlas — sub-partition	level_b	B_plasma
+definition_crosscheck:unsupervised atlas — sub-partition	n_cells_a	27093
+definition_crosscheck:unsupervised atlas — sub-partition	n_cells_b	6301
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_detection_B_naive	0.2300594249437124
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_detection_B_plasma	0.22123472464688146
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_fisher_P	0.13383756203497102
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_donor_mean_B_naive	0.22841052727915542
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_donor_mean_B_plasma	0.232656671337859
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_donor_paired_wilcoxon_P	0.6348496079444885
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1_n_donors	26
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_detection_B_naive	0.032665264090355445
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_detection_B_plasma	0.07221076019679416
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_fisher_P	9.472865786736218e-41
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_donor_mean_B_naive	0.03353837535529896
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_donor_mean_B_plasma	0.07467448082019869
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_donor_paired_wilcoxon_P	5.960464477539063e-08
+definition_crosscheck:unsupervised atlas — sub-partition	C1GALT1C1_n_donors	26
+definition_crosscheck:marker gate (primary)	level_a	naive
+definition_crosscheck:marker gate (primary)	level_b	plasma
+definition_crosscheck:marker gate (primary)	n_cells_a	23458
+definition_crosscheck:marker gate (primary)	n_cells_b	16398
+definition_crosscheck:marker gate (primary)	C1GALT1_detection_naive	0.22678830249808168
+definition_crosscheck:marker gate (primary)	C1GALT1_detection_plasma	0.25551896572752775
+definition_crosscheck:marker gate (primary)	C1GALT1_fisher_P	3.987310880026906e-11
+definition_crosscheck:marker gate (primary)	C1GALT1_donor_mean_naive	0.22309156040026293
+definition_crosscheck:marker gate (primary)	C1GALT1_donor_mean_plasma	0.2550999704777902
+definition_crosscheck:marker gate (primary)	C1GALT1_donor_paired_wilcoxon_P	0.00010919570922851562
+definition_crosscheck:marker gate (primary)	C1GALT1_n_donors	26
+definition_crosscheck:marker gate (primary)	C1GALT1C1_detection_naive	0.0314178531844147
+definition_crosscheck:marker gate (primary)	C1GALT1C1_detection_plasma	0.05238443712647884
+definition_crosscheck:marker gate (primary)	C1GALT1C1_fisher_P	2.844846174845769e-25
+definition_crosscheck:marker gate (primary)	C1GALT1C1_donor_mean_naive	0.03168320764452472
+definition_crosscheck:marker gate (primary)	C1GALT1C1_donor_mean_plasma	0.051702047403015344
+definition_crosscheck:marker gate (primary)	C1GALT1C1_donor_paired_wilcoxon_P	7.450580596923828e-07
+definition_crosscheck:marker gate (primary)	C1GALT1C1_n_donors	26

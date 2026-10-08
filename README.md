@@ -10,7 +10,7 @@
 | `code/M1_geo/` | GEO 三系列（GSE73953/115857/93798）解析、差异表达（Python + R/limma）与箱线图 | Methods L0；Results R1；Fig. 1b；Fig. 2... 表2 |
 | `code/M2a_eqtl/` | eQTL Catalogue r8 查询与 5 轴基因 × 上下文热图/森林图（**产出写入 `data/M2a_eqtl/`**，含 `format_check.log`） | L1a；Fig. 2a |
 | `code/M2_lead_eqtl/` | Gd-IgA1 lead 变异区域抓取与 cis-eQTL 复现矩阵（Fig2b/c 源） | L1b；Fig. 2b,c；表3；Figure S3 |
-| `code/M2b_susie_coloc/` | coloc（ABF）+ SuSiE 信号级共定位与 allelic score | L2；Fig. 3b,c；表4；Table S2a/S2b、S3 |
+| `code/M2b_susie_coloc/` | coloc（ABF）+ SuSiE 信号级共定位与 allelic score；**step3_power_simulation.py（2026-10-08 新增）：阴性共定位的功效模拟，4,000 次/情景，结论「观测效应量下功效 ≤ 1.3%；80% 功效需 OR ≥ 1.08」** | L2；Fig. 3b,c；表4；Table S2a/S2b、S3；**Fig. S8；Table S16a/S16b** |
 | `code/M2c_disease/` | lead 变异 × IgAN 区域反查（含 GALNT12 min P 如实标注） | L2 补充；Table S4a/S4b |
 | `code/M4_mediation/` | GoDMC mQTL 抓取、5 显著 CpG、两步甲基化 MR、mQTL×eQTL×IgAN coloc | L3；Fig. 4；表5；Table S5a–S5d |
 | `code/M5_eastasia/` | gnomAD v4 EAS/NFE 频率分层与关联合并 | L5；Fig. 5；表6 |
@@ -18,11 +18,13 @@
 | `code/fig_scripts/` | **主图 Fig1–Fig6 + GA 冻结件渲染脚本**（`style_common.py` 统一样式；PNG300 + PDF + TIFF600；**Fig. 1 默认输出 v4.3（L0–L8 九行；第 8/9 行与 Results 小节同序；第 9 行＝上游调控层，已改为阴性表述）**，2026-10-01；**GA 默认输出 v3.5**（上游调控层注条改阴性、连接线改虚线），2026-10-01） | 投稿图件 |
 | `code/_paths.py` | **统一路径解析（开箱即用）**：所有脚本经本模块取路径，不硬编码任何本机绝对路径；`python code/_paths.py` 可自检（退出码 = 问题数） | 复现入口 |
 | `code/lib/` | 随包分发的第三方辅助模块：`tabix_remote.py`（纯 Python BGZF/tabix 区域读取）、`ensg2sym.json`（ENSG → symbol 映射）、`collectri.py`（**CollecTRI 获取与版本校验**；缺失时自动从 OmniPath 下载） | 复现入口 |
-| `code/_build_submission_fulltext.py` | 章节定稿 → 单文件全稿（Manuscript）拼装脚本（头部装配说明 **v1.26**） | 全稿组装 |
+| `code/_build_submission_fulltext.py` | 章节定稿 → 单文件全稿（Manuscript）拼装脚本（头部装配说明 **v1.31**） | 全稿组装 |
+| `build_output/` | **装配产出目录**（`_build_submission_fulltext.py` 的落点）：`Manuscript_GM_fulltext.md`（Genome Medicine 版母本）与 **`Manuscript_SciRep_fulltext.md` + `SciRep_relocated_tables.md`（Scientific Reports 版母本与迁出正文的 Table 2–7 全文；供审稿人直接阅读，不作为分析输入）** | 全稿组装产出 |
 | `code/_tmp_build_tables.py` | ch8 Tables 2–7 转录（程序化自 `data/` 分析 TSV） | 正文表 |
 | `code/_tmp_geo_check.py` | GEO 系列元数据/文献核对 | Methods 数据决议 |
 | `code/sc_regulatory/` | 单细胞 atlas（step1）、**上游调控子推断（step2）**、甲基化敏感 motif（step3）。step2 自 2026-10-01 起改用**完整 CollecTRI 网络**（面板内 `min_targets=5 / max_targets=None` → **778** 个 regulon），零分布**按各调控子自身靶数匹配**（`--k-null` 默认 1,000/档），BH 在各 B 细胞状态内校正，并加做「回归掉单元级全局协变量」对照；该层结论为**阴性** | Results R9；Fig. S5–S6；Table S9/S10 |
-| `code/directional_validation/` | GSE285335 载入与 B 细胞亚群表达/轨迹检验 | Results R2 单细胞交叉核对；Fig. S4；Table S7/S8 |
+| `code/directional_validation/` | GSE285335 载入与 B 细胞亚群表达/轨迹检验（step1–step3）；**2026-10-08 新增 step4**（donor 级 pseudobulk 配对 Wilcoxon）、**step5**（高 RNA doublet 代理敏感性）、**step6**（门控纯度审计 ＋ 以数据集自带的 marker-rich 无监督分区重算，交叉核实第二定义） | Results R2 单细胞交叉核对；Fig. S4；Table S7/S8/**S8b/S8c/S8d** |
+| `code/B2_bcell_eqtl/` | B 细胞亚型 cis-eQTL 异质性（Cochran's Q / 加权 meta 回归，OneK1K naive vs memory vs intermediate） | Results R2 补充；**Fig. S7**；**Table S11**（`results/B2_bcell_eqtl/`） |
 | `code/C1_eas_eqtl/` | ImmuNexUT E-GEAD-398 东亚调控交叉参照（step1–3） | Results R6；Table S12/S13 |
 | `code/M7_ancestry_increment/` | **2026-09-26 增量（稿件 v1.9）**：A＝WBBC 中国人群等位频率；C＝Asian-only IgAN meta 祖先匹配直查；D＝血清总 IgA 阴性对照。含 **Table S14 的确定性生成器** `step_m7_5_build_tables.py`（由原始输入逐字节重出交付表），附慢站（Kiryluk）1 MB 分块断点续传下载器与 Range 粗索引定位工具。**B（肾脏分区 eQTL）经三次核查资源不可得，未写入** | Methods §East Asian heterogeneity/§Direct lookup；Results §4 糖基特异性 + §5 + §6；表 6 第 5 列；Table S14/S15 |
 | `code/review_cleanup_2026-09-10/` | **整改留痕脚本（`_tmp_*`）24 件**（体例统一、去内部编号、定点改写、L7 数字同步、Additional file 图注修正、裸 Rn 补漏、GA 去编号、作者决策 ②③④ 落实、补充材料 -isation、**第三轮十处整改**、**本轮删实验室在研前瞻段**）+ 渲染/升版辅助脚本 5 件 + `Additional_File_1_Figure_Legends_header_notes_archived.md`（补充材料头块归档）；仅供审计，不参与分析流程 | — |
@@ -111,6 +113,8 @@ Third-party source data (GEO, eQTL Catalogue, GTEx, OneK1K, ImmuNexUT, GWAS summ
 Citation metadata is provided in [`CITATION.cff`](CITATION.cff); the archived version DOI is **https://doi.org/10.6084/m9.figshare.34054998** (v1.0.0, figshare) and is also given in the manuscript's Data Availability Statement.
 
 ---
+*v2.18 · 2026-10-08 · 阶段4.5 复现包* — v2.17→v2.18：**Scientific Reports 版投稿对应的仓库增量（目录映射补登 ＋ 新增产出登记）**。稿件线 v1.30→v1.31 有两轮外部审阅整改，期间**新增了三类分析产出**，但本文件此前未登记（仓库若照原样归档，会出现"有产出、无索引"的缺口）。本轮只做**补登**：① 目录映射新增 `code/B2_bcell_eqtl/`（B 细胞亚型 cis-eQTL 异质性 → Fig. S7 / Table S11；此前为已知漏登项）与 `build_output/`（装配产出目录，含 GM 版与 **Sci Rep 版**母本）；② `code/M2b_susie_coloc/` 行补 `step3_power_simulation.py`（共定位功效模拟 → **Fig. S8 / Table S16a–S16b**）；③ `code/directional_validation/` 行补 step4–step6（donor 级 pseudobulk 配对检验、doublet 代理敏感性、门控纯度审计与第二定义交叉核实 → **Table S8b/S8c/S8d**）；④ `code/_build_submission_fulltext.py` 行的装配说明版本由 **v1.26 更正为 v1.31**（v1.30／v1.31 两轮整改后脚本已升版，原记载滞后）。**未改动**：`code/` 任何脚本、`data/`、`results/` 数值、`LICENSE`、`CITATION.cff`、历史快照；`data/` 目录清单不变（新增产出均落在既有 `results/`、`build_output/` 下）。**数据政策不变**：`data/sc_regulatory/panel_matrix.npz`（979 MB，超 GitHub 100 MB 单文件硬限）与两份第三方原始数据仍**不随仓库分发**（见「CollecTRI 版本说明」与 License 段）。
+
 *v2.17 · 2026-10-02 · 阶段4.5 复现包* — v2.16→v2.17：**存档版本 DOI 回填（Zenodo → figshare）**。原计划经 Zenodo（GitHub 集成）mint DOI，因 Zenodo 无法登录，改用 **figshare**（同属 DataCite 注册库，前缀 `10.6084`）。① 存档 DOI = **`https://doi.org/10.6084/m9.figshare.34054998`**（version v1.0.0）。② **`CITATION.cff`**：`doi` 与 `url` 两键由注释态**启用**并填上述 DOI；`repository-code` 维持；文件头「待回填」提示与 ORCID 注释中的 Zenodo 字样一并更正为 figshare。③ **本文件** Citation 段回填 DOI。④ **投稿件同步**：两版正文 Data Availability 末句占位串 → 完整软件声明（软件名 / 主页 / 存档 DOI / OS / 语言 / 许可，MDPI 要求字段齐全）＋句尾引用 **[34]**；参考文献表末新增 **[34]**；`submission/data_availability_draft.md`、`submission/manuscript/07_TitlePage_Declarations.md`、`submission/manuscript/Manuscript_GM_fulltext.md` 同句去占位。⑤ **同步范围**：`GitHub上传_20261001/` 中转站重建、`_gitpush_work/` 本地待推仓库、`../投稿前硬关卡处理单_v1.0_20260927.md`、`GitHub上传_20261001/00_上传操作说明_必读.md`、`../Git命令行上传操作卡_v1.0_20261002.md`。⑥ **未改**：`code/`、`data/`、`results/`、`LICENSE`、历史快照（`submission/figures/x3_*.md`、`_archive/*`）。
 
 *v2.16 · 2026-10-02 · 阶段4.5 复现包* — v2.15→v2.16：**仓库名写法更正（首尾各一个连字符）＋ clone 地址补全为真实账号**。仓库已建并公开，经 GitHub 页面核对，**实际仓库名为 `-igan-gdiga1-axis-pipeline-`（首尾各有一个连字符）**，属主 `kongtonglangke`。v2.13 ④ 及本文件此前各版所记的 `igan-gdiga1-axis-pipeline`（无连字符）**写法有误，以本条为准**（该错误曾导致本地 remote 指向不存在的仓库）。① **本文件**三处更正：`快速开始` 的 `git clone` 地址与 `cd` 目录名、环境变量示例中的 `IGAN_REPRO_ROOT`；并把 `<account>` 占位符替换为真实账号。② **`CITATION.cff`** 的 `repository-code` 由注释态**启用**并填真实地址（`https://github.com/kongtonglangke/-igan-gdiga1-axis-pipeline-`）；`doi` / `url` / 两个 `orcid` **仍留注释**，待 Zenodo 出 DOI 后回填。③ **同步范围**：`GitHub上传_20261001/` 中转站按新件重建（含 `00_上传文件清单`）、`_gitpush_work/` 本地待推仓库、`../投稿前硬关卡处理单_v1.0_20260927.md`、`GitHub上传_20261001/00_上传操作说明_必读.md` §7–§8。④ **未改**：`code/`、`data/`、`results/` 的任何内容与数值，以及历史留档（`06_投稿前待办_20260929/` 内副本、`_archive*` 记忆快照）——历史快照按惯例不回改，其旧写法只作留痕。

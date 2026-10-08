@@ -40,6 +40,12 @@
       保留（该柱确为 EAF）。旧件 Fig5_v3.0.* 留档不删。
       （注：panel_b 内联 "v3.1：" 注释系 v3.0 冻结前的内部迭代标签，其改动
       均已包含在 v3.0 冻结件中，与本次 v3.1 发布无关。）
+  v3.7 2026-10-08 用户目检修正（本次）：panel b legend 下移，让出水平虚线。
+      根因：legend 白底（frameon=True, framealpha=0.95）以 y=0.995 框位
+      压在 -log10(5e-8)=7.30 的水平虚线上，实测该虚线行橙色像素在
+      x 274→758 px（约 484 px）整段被遮。改 bbox_to_anchor y 0.995→0.85，
+      legend 顶边由数据 y≈8.33 降到 ≈7.10，落在虚线下方，虚线全线贯通。
+      仅几何改动，无数据/数值/结论变化。
 """
 from __future__ import annotations
 
@@ -122,31 +128,22 @@ def panel_a(ax):
         ax.text(x[i], u + 0.012, f"{u:.3f}", color=OKABE_ITO["blue"],
                 fontsize=FS_TICK - 1, ha="center", va="bottom")
 
-    # rs7856182 反差红框：v3.0 高 1.10（-0.04~1.06）远超该组矮柱
-    # （EAS 0.025/EUR 0.154/meta 0.114 + 柱顶数字 ~0.27），且占满 ax
-    # 顶部挡住 legend 位。降为 -0.04~0.40（围柱 + 数字即可，反差语义
-    # 由框 + REVERSED 标签承担）。facecolor=none 轮廓框与柱相交是设计
-    # 意图，check_patch 跳过 facecolor=none 配对。
-    rs_idx = leads.index("rs7856182")
-    ax.add_patch(plt.Rectangle((rs_idx - 0.55, -0.04), 1.10, 0.44,
-                               facecolor="none", edgecolor=C_GW_LINE,
-                               lw=2.0, ls="-", zorder=4))
-    # REVERSED 标签：框外下方 va=top y=-0.15（文字顶贴框底 -0.04
-    # 之下 0.11，文字底 ~-0.25 不出 ylim -0.28）
-    ax.text(rs_idx, -0.15, "REVERSED (EAS<EUR)",
-            color=C_GW_LINE, fontsize=FS_TICK - 0.5,
-            ha="center", va="top", weight="bold",
-            bbox=dict(boxstyle="round,pad=0.2", facecolor="white",
-                      edgecolor="none", alpha=0.92))
+    # v3.6 2026-10-08：按审稿意见删除 rs7856182 的"反差红框 + REVERSED"标注。
+    # 根因：把该位点标为"REVERSED / 方向相反"与图注、正文的新口径
+    #（"is the least common in East Asians"——强调"东亚频率最低"，
+    # 而非"方向相反"）不一致；红框还会被读成"该位点行为异常"。
+    # 现仅保留三柱本身（EAS / EUR / IgAN meta），不加任何高亮或"reversed"语义。
+    # 连带：下方 ylim 下界由 -0.28 收到 -0.06（原为给 REVERSED 标签留位）。
 
     ax.set_xticks(x)
-    # X tick 两行（rs ID 上、gene 下）+ y 标签让位：pad 让 REVERSED box 不压
+    # X tick 两行（rs ID 上、gene 下）+ y 标签让位（v3.6：REVERSED 标签已删，
+    # 下界原为 -0.28 的留位随之收紧到 -0.06）。
     ax.set_xticklabels([f"$\\it{{{l}}}$\n{g}" for l, g in zip(
         leads, ["C1GALT1", "C1GALT1", "GALNT12", "C1GALT1C1"])],
         fontsize=FS_TICK - 0.5)
     ax.tick_params(axis="x", pad=2)
     ax.set_ylabel("Allele frequency (AF)", fontsize=FS_AXIS_LABEL)
-    ax.set_ylim(-0.28, 1.20)
+    ax.set_ylim(-0.06, 1.20)
     ax.tick_params(axis="y", labelsize=FS_TICK)
     # ax-level 图例改为 fig-level（不被 constrained_layout 强制回内）
     panel_a.legend_handles = [
@@ -243,6 +240,13 @@ def panel_b(ax):
     # v3.1：b 面板 legend 从 fig-level 移入 ax 内左上（数据区 x0~2.5 无点，
     # 唯 P=5e-8 标签已右移腾位；水平虚线 y=7.3 穿过 → frameon=True 白底
     # 遮线保证可读）。ncol=1 三行：P<1e-4 红 / nominal 蓝 / X chr 绿三角。
+    # v3.7（2026-10-08，用户目检）：legend 顶边原在 y=0.995 框位 = 数据
+    # y≈8.33，白底正好压住水平虚线 y=7.30（-log10(5e-8)）在 x=0.05~2.46
+    # 一段（实测该行橙色像素 263→2273 px 中间断口 274→758 px，共 ~484 px
+    # 虚线被遮）。改为 bbox_to_anchor y=0.85 → legend 顶边降到数据 y≈7.10，
+    # 整个框落在虚线下方，虚线全线贯通；框底 ≈ y 5.37，仍远高于该区最近的
+    # 数据点（rs13226913 蓝点 y=0.5）与 "y = x" 标签（x=3.0 在框右缘之外），
+    # 不引入新重叠。
     ax.legend(handles=[plt.scatter([], [], s=170, c=OKABE_ITO["vermillion"],
                                    edgecolors="black", lw=1.0,
                                    label="Han Gd-IgA1 P<1e-4"),
@@ -252,7 +256,7 @@ def panel_b(ax):
                        plt.scatter([], [], s=140, c=OKABE_ITO["bluish_grn"],
                                    edgecolors="black", lw=1.0, marker="^",
                                    label="X chr (no IgAN)")],
-              loc="upper left", bbox_to_anchor=(0.005, 0.995),
+              loc="upper left", bbox_to_anchor=(0.005, 0.85),
               ncol=1, frameon=True, framealpha=0.95, edgecolor="#CCCCCC",
               fontsize=FS_LEGEND - 0.5, borderaxespad=0.4)
     ax.set_title("b  Gd-IgA1 vs IgAN P",
