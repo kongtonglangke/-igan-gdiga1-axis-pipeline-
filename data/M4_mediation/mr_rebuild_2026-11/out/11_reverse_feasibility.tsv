@@ -1,0 +1,8 @@
+item	value
+IgAN GWAS variants in locus window (chr7:7.10-7.40 Mb, GRCh38)	3224
+variants reaching P<5e-8 (instrument threshold)	0
+variants reaching P<1e-5 (relaxed threshold)	0
+smallest P in window	0.0005568
+F-statistic of the best in-window variant	11.93
+F-statistic of the best in-window variant at P<5e-8	NA
+mQTL instruments with IgAN P<0.05	0

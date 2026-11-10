@@ -17,8 +17,8 @@ title: >-
   East Asian perspectives"
 
 type: software
-version: "1.0.0"
-date-released: "2026-09-29"
+version: "1.1.0"
+date-released: "2026-11-10"
 license: MIT
 
 authors:
@@ -64,9 +64,13 @@ doi: "10.6084/m9.figshare.34054998"
 url: "https://doi.org/10.6084/m9.figshare.34054998"
 
 # ---------------------------------------------------------------------------
-# 说明（2026-10-02 已回填）：
+# 说明（2026-10-02 已回填；2026-11-10 版本号更新）：
 #   - 存档 DOI 由 **figshare** 提供（原计划的 Zenodo 因登录不可用改用 figshare；
-#     两者均为 DataCite 注册库，10.6084 为 figshare 前缀）。version v1.0.0。
+#     两者均为 DataCite 注册库，10.6084 为 figshare 前缀）。DOI 指向 v1.0.0 快照。
+#   - **2026-11-10 仓库 version 升到 1.1.0**（MR 层整层重建 + Table S5d 取列更正，
+#     见 README v2.19）。DOI 不变：它固定的是 v1.0.0 存档快照；若需与仓库同步，
+#     应在 figshare 上传新版本后把这里的 doi 一并换为新版本 DOI，三处（本文件 /
+#     figshare 记录 / 正文 Data Availability）再核对一次。
 #   - repository-code 已于 2026-10-02 启用并填真实地址（仓库名 -igan-gdiga1-axis-pipeline-，
 #     首尾各一个连字符；早前记录的 igan-gdiga1-axis-pipeline（无连字符）写法有误）。
 #   - 本文件 / figshare 记录 / 正文 Data Availability 三处 DOI 必须完全一致。
