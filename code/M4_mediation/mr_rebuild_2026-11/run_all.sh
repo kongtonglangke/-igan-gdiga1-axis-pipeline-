@@ -36,7 +36,8 @@ if [ ! -d "$MQTL_DIR" ]; then
   exit 1
 fi
 
-for s in 01_instruments 02_mr_main 03_coloc 04_directionality \
+for s in 01_instruments 02_mr_main 03_coloc 03b_coloc_eqtl_igan 03c_coloc_mqtl_eqtl \
+         03d_coloc_prior_grid 04_directionality \
          05_positive_control 06_reverse 07_simulation 08_figures; do
   printf '== %s ==\n' "$s"
   "$RSCRIPT" "$HERE/$s.R"

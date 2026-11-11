@@ -91,3 +91,31 @@ without it.
   across runs. The two `cairo_pdf` outputs embed a creation timestamp, so their
   md5 changes between runs while the PNG/TIFF and every TSV stay byte-identical —
   check reproducibility on the TSV/PNG, not on the PDF.
+
+## 2026-11-11: all region-level colocalisations moved to the R coloc package
+
+The eQTL-to-IgAN and mQTL-to-eQTL comparisons were originally computed with a
+pure-Python re-implementation of the ABF. They are now computed with
+`coloc::coloc.abf` (coloc 5.2.3), so that every region-level colocalisation in the
+paper uses the official package. New scripts:
+
+| Script | What it does |
+|---|---|
+| `_extract_igan_regions.py` | one-off byte extraction of the four IgAN GWAS windows (data movement only) |
+| `_prep_eqtl_for_coloc.py` | rewrites the eQTL Catalogue long-format cache into a plain 8-column table (no statistics) |
+| `03b_coloc_eqtl_igan.R` | 5 genes x 5 contexts, `coloc.abf`, `data/igan_regions_for_coloc/` + `eqtl_for_coloc/` |
+| `03c_coloc_mqtl_eqtl.R` | 5 CpGs x 5 contexts, `coloc.abf` |
+| `03d_coloc_prior_grid.R` | prior-sensitivity grid for the cg19473623 x kidney-cortex call |
+| `_make_coloc_tables_R.py` | reshapes the R output into Table S2a / S19 / S5d formats |
+
+The R results reproduce the Python conclusions exactly: the eQTL x IgAN null holds
+(max PPH4 0.0308 vs 0.031), and the same three mQTL x eQTL comparisons exceed 0.8
+(cg19473623 kidney cortex 0.994, cg17994788 naive B 0.875, cg19473623 naive B 0.827).
+Individual PPH4 values differ by at most 0.10 because coloc uses `sd.prior` 0.15 for
+a quantitative trait and 0.2 for a case-control trait, whereas the Python code used a
+single W = 0.04 for both sides.
+
+Signal-level re-testing still uses the official eQTL Catalogue SuSiE credible sets:
+that release does not distribute LD matrices, so `coloc.susie` cannot be re-run and the
+signal-level log-ABF is reconstructed from the credible-set member summary statistics.
+The manuscript states this.
